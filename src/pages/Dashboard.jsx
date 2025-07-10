@@ -13,7 +13,6 @@ export default function Dashboard({ apiBaseUrl }) {
   const [candidates, setCandidates] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState({ name: "Priya Kumari", email: "priya@email.com" });
   const [showReferralForm, setShowReferralForm] = useState(false);
 
   // Save referral to backend
@@ -83,12 +82,12 @@ export default function Dashboard({ apiBaseUrl }) {
     <div className="min-h-screen w-full bg-gradient-to-br from-[#f0f4f8] via-[#e0e7ef] to-[#f7f7fa] font-['Inter','Segoe UI',sans-serif]">
       <Navbar />
       <main className="w-full flex flex-col items-center px-0 md:px-0">
-        <header className="w-full max-w-full bg-gradient-to-r from-[#f7b267] via-[#f4845f] to-[#f27059] py-12 px-4 md:px-16 rounded-b-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-10 mb-12">
+        <header className="w-full max-w-full bg-gradient-to-r from-[#f7b267] via-[#f4845f] to-[#f27059] py-5 px-4 md:px-16 rounded-b-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-10 mb-12">
           <div className="flex-1 min-w-[260px]">
-            <h1 className="text-6xl font-black tracking-tight text-white mb-4 leading-tight drop-shadow-xl">
-               Welcome, <span className="text-[#22223b]">{user.name.split(' ')[0]}</span>
+            <h1 className="text-4xl font-black tracking-tight text-white mb-4 leading-tight drop-shadow-xl">
+               Welcome
             </h1>
-            <p className="text-2xl text-[#22223b] mb-8 max-w-2xl font-medium">
+            <p className="text-lg text-[#22223b] mb-8 max-w-2xl font-medium">
               Empower your network by referring exceptional talent and monitoring every step of their journey. This professional dashboard provides real-time insights, seamless management, and celebrates your impact on building high-performing teams.
             </p>
             <div className="flex flex-wrap gap-4 mt-4">
@@ -136,9 +135,6 @@ export default function Dashboard({ apiBaseUrl }) {
               <button className="bg-[#f27059] hover:bg-[#f4845f] text-white font-bold px-6 py-3 rounded-lg transition text-lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 Back to Top
               </button>
-              <button className="bg-[#22223b] hover:bg-[#4a4e69] text-white font-bold px-6 py-3 rounded-lg transition text-lg" onClick={() => window.location.reload()}>
-                Refresh Dashboard
-              </button>
             </div>
             <div className="bg-gradient-to-r from-[#43aa8b] via-[#f7b267] to-[#f27059] rounded-2xl shadow-xl p-8 text-white text-center text-xl font-semibold">
               <span>Keep referring and help your network grow! Every successful hire brings you closer to exclusive rewards.</span>
@@ -149,14 +145,14 @@ export default function Dashboard({ apiBaseUrl }) {
         {showReferralForm && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm transition-all">
             <div className="relative bg-white rounded-3xl shadow-2xl p-10 w-full max-w-xl animate-fadeInUp">
-              <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold px-2 focus:outline-none"
-                onClick={() => setShowReferralForm(false)}
-                aria-label="Close"
-              >
-                ×
-              </button>
-              <h3 className="text-3xl font-black mb-6 text-[#22223b] text-center">Refer a Candidate</h3>
+         <button
+  className="absolute top-4 right-4 text-black hover:text-gray-700 text-md w-10 h-10 font-bold px-2 focus:outline-none flex items-center justify-center"
+  onClick={() => setShowReferralForm(false)}
+  aria-label="Close"
+>
+  X
+</button>
+              {/* <h3 className="text-3xl font-black mb-6 text-[#22223b] text-center">Refer a Candidate</h3> */}
               <ReferralForm onSubmit={handleReferralSubmit} loading={loading} />
             </div>
           </div>

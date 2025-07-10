@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Metrics from "./pages/Metrics";
@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000"; // Backend base URL
 
 export default function App() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "" });
   const showToast = message => {

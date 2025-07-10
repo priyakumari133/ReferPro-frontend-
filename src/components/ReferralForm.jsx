@@ -38,7 +38,7 @@ export default function ReferralForm({ onSubmit, loading }) {
   };
 
   return (
-    <form className="bg-white rounded-3xl shadow-2xl p-8 flex flex-col gap-6 border-2 border-[#f4845f] w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
+    <form className="bg-white rounded-3xl shadow-2xl p-3 flex flex-col gap-6 border-2 border-[#f4845f] w-full max-w-lg mx-auto" onSubmit={handleSubmit}>
       <h2 className="text-3xl font-black mb-2 tracking-tight text-[#22223b] text-center">🚀 Refer a Candidate</h2>
       {error && <div className="text-red-500 text-base font-semibold bg-red-50 rounded px-3 py-2 border border-red-200 text-center">{error}</div>}
       <div className="flex flex-col md:flex-row gap-4">
