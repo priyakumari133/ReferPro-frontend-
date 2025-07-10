@@ -35,7 +35,7 @@ export default function App() {
       const data = await res.json();
       if (!res.ok) return setError(data.error || "Signup failed");
       showToast("Account created successfully! You can now log in.");
-      setTimeout(() => { window.location.href = "/login"; }, 1200);
+      setTimeout(() => { navigate("/"); }, 1200);
     } catch (err) {
       setError("Signup failed");
     } finally {
@@ -57,7 +57,7 @@ export default function App() {
       if (!res.ok) return setError(data.error || "Login failed");
       localStorage.setItem("token", data.token);
       showToast("Login successful!");
-      setTimeout(() => { window.location.href = "/dashboard"; }, 1200);
+      setTimeout(() => { navigate("/dashboard"); }, 1200);
     } catch (err) {
       setError("Login failed");
     } finally {
@@ -86,7 +86,7 @@ export default function App() {
       }
       showToast("Candidate referred successfully!");
       if (typeof resetForm === 'function') resetForm();
-      setTimeout(() => window.location.reload(), 1200);
+      setTimeout(() => { navigate("/dashboard"); }, 1200);
     } catch (err) {
       alert("Error submitting referral. Please try again.");
     } finally {
