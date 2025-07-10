@@ -108,7 +108,7 @@ export default function App() {
   return (
     <>
       <Toast message={toast.message} show={toast.show} />
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -129,7 +129,7 @@ export default function App() {
           <Route path="/signup" element={<Signup onSignup={handleSignup} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </Router>
+      {/* </Router> */}
       <Footer />
     </>
   );
