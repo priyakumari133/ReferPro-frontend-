@@ -7,9 +7,9 @@ export default function Navbar() {
     localStorage.removeItem("token");
     if (window.showToast) {
       window.showToast("Logged out successfully!");
-      setTimeout(() => { window.location.href = "/"; }, 1200);
+      setTimeout(() => { navigate("/"); }, 1200);
     } else {
-      window.location.href = "/";
+      navigate("/")
     }
   };
   return (
